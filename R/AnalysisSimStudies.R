@@ -72,7 +72,7 @@ if( n.erratic > 0 ){
 }
 
 
-N.sim.considered <- 1000 #Number of simulations we want to consider
+N.sim.considered <- 300 #Number of simulations we want to consider
 if(N.sim - n.erratic < N.sim.considered){
   print("WARNING: You are trying to analize more estimations than available and valid.")
   print(paste("Number of desired estimations: " , N.sim.considered))
