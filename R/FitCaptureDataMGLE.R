@@ -30,7 +30,7 @@ MGLE <- optim( theta0 ,
                  ll <- Gauss_ll( Q.obs ,
                                  m = mom.capt$mean.vec,
                                  C = mom.capt$cov.mat)
-                 print(paste( c( "For theta =" , theta , "the approximated Gauss_ll is " , ll) , collapse = " "  ))
+                 #print(paste( c( "For theta =" , theta , "the approximated Gauss_ll is " , ll) , collapse = " "  ))
                  return(-ll)},
                method = "L-BFGS-B" ,
                lower = inf.lim ,
@@ -52,7 +52,7 @@ Hess.MGLE <- hessian( function(theta){
   ll <- Gauss_ll( Q.obs ,
                   m = mom.capt$mean.vec,
                   C = mom.capt$cov.mat)
-  print(paste( c( "For theta =" , theta , "the approximated Gauss_ll is " , ll) , collapse = " "  ))
+  #print(paste( c( "For theta =" , theta , "the approximated Gauss_ll is " , ll) , collapse = " "  ))
   return(-ll)} , x = MGLE$par  )
 print(Sys.time()-start)
 
