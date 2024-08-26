@@ -26,6 +26,34 @@ To analyze the results, the routine "AnalysisSimuStudes.R" is provided. One must
 
 **IMPORTANT:** Since the simulation-fitting methods take some time, these routines are all parallelaized using the `parallel` library. The number of cores to be used are to be set in the variable `n.cores`. Inside each cluster definition, the variable `N.sim` is also defined, which indicates the number of simulations to execute *per core*. The routing merges the results in single arrays.
 
+### To obtain *exactly* the same results
+
+The results reported in Carrizo Vergara et al. (2024) were obtained over different machines and servers, therefore it is tricky to re-obtian the same results. Here we provide instructions to obtain them, but one must be aware than for some of those, multi-core serves with up-to 80 cores must be used in some settings. As a recall, in the paper 300 simulations are provided for each configuration. We sometimes tried to simulate slightly more than 300 to ensure that erratic simulations will not reduce substantially the final number of analysed simulations.
+
+In the parallelized simulation studies routines, the line `seeds <- 13^(1:n.cores) - 0:(n.cores-1)` establishes the initialized seeds used at the begginng of the `N.sim` simulations done in each core. They were chosen arbitrarily. Therefore, the final number of used cores determines the results.
+
+**For the Capture model:**  
+
+For $\sigma = 2 , 5$, and $N = 10^{2} , 10^{3} , 5644 , 10^{4} , 10^{5}$, set `n.cores = 50`, `N.sim = 6`.
+For $\sigma = 10$ and $N = 10^{3} , 5644 , 10^{4} , 10^{5}$, set `n.cores = 60`, `N.sim = 5`.
+For $\sigma = 10$ and $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.
+
+**For the Snapshot model:**
+
+For $\sigma = 2$, $N = 10^{2}$, set `n.cores = 78`, `N.sim = 4`.
+For $\sigma = 2$, $N = 10^{3}, 5644, 10^{4}$, set `n.cores = 75`, `N.sim = 4`.
+
+For $\sigma = 10$, $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.
+For $\sigma = 10$, $N = 5644$, set `n.cores = 80`, `N.sim = 4`.
+For $\sigma = 10$, $N = 10^{3} , 10^{4}$, set `n.cores = 78`, `N.sim = 4`.
+
+**For the EcoDiff model with MGLE:**
+
+
+**For the EcoDiff model with MLE:**
+
+
+
 
 ## References
 
