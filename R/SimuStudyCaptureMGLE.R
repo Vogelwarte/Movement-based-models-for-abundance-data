@@ -38,7 +38,7 @@ clusterEvalQ(cl , {
 )
 
 #Set seeds (different for each core)
-seeds <- 13^(1:n.cores) - 0:(n.cores-1) 
+seeds <- 13*( 2*(1:n.cores) - 1 ) - 2*(0:(n.cores-1)) 
 
 
 start <- Sys.time()
