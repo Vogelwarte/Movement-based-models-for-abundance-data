@@ -40,7 +40,7 @@ For $\sigma = 10$ and $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.
 
 **For the Snapshot model:**
 
-For $\sigma = 2$, $N = 10^{2}$, set `n.cores = 78`, `N.sim = 4`.
+For $\sigma = 2$, $N = 10^{2}$, set `n.cores = 78`, `N.sim = 4`.< br / >
 For $\sigma = 2$, $N = 10^{3}, 5644, 10^{4}$, set `n.cores = 75`, `N.sim = 4`.
 
 For $\sigma = 10$, $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.
