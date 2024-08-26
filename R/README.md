@@ -32,20 +32,24 @@ The results reported in Carrizo Vergara et al. (2024) were obtained over differe
 
 In the parallelized simulation studies routines, the line `seeds <- 13^(1:n.cores) - 0:(n.cores-1)` establishes the initialized seeds used at the begginng of the `N.sim` simulations done in each core. They were chosen arbitrarily. Therefore, the final number of used cores determines the results.
 
+
 **For the Capture model:**  
 
-For $\sigma = 2 , 5$, and $N = 10^{2} , 10^{3} , 5644 , 10^{4} , 10^{5}$, set `n.cores = 50`, `N.sim = 6`.
-For $\sigma = 10$ and $N = 10^{3} , 5644 , 10^{4} , 10^{5}$, set `n.cores = 60`, `N.sim = 5`.
+For $\sigma = 2 , 5$, and $N = 10^{2} , 10^{3} , 5644 , 10^{4} , 10^{5}$, set `n.cores = 50`, `N.sim = 6`.<br/>
+For $\sigma = 10$ and $N = 10^{3} , 5644 , 10^{4} , 10^{5}$, set `n.cores = 60`, `N.sim = 5`.<br/>
 For $\sigma = 10$ and $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.
+
 
 **For the Snapshot model:**
 
 For $\sigma = 2$, $N = 10^{2}$, set `n.cores = 78`, `N.sim = 4`.<br/>
 For $\sigma = 2$, $N = 10^{3}, 5644, 10^{4}$, set `n.cores = 75`, `N.sim = 4`.
 
-For $\sigma = 10$, $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.
-For $\sigma = 10$, $N = 5644$, set `n.cores = 80`, `N.sim = 4`.
+
+For $\sigma = 10$, $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.<br/>
+For $\sigma = 10$, $N = 5644$, set `n.cores = 80`, `N.sim = 4`.<br/>
 For $\sigma = 10$, $N = 10^{3} , 10^{4}$, set `n.cores = 78`, `N.sim = 4`.
+
 
 **For the EcoDiff model with MGLE:**
 
