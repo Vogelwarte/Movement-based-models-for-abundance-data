@@ -30,7 +30,7 @@ To analyze the results, the routine "AnalysisSimuStudes.R" is provided. One must
 
 The results reported in Carrizo Vergara et al. (2024) were obtained over different machines and servers, therefore it is tricky to re-obtian the same results. Here we provide instructions to obtain them, but one must be aware than for some of those, multi-core serves with up-to 80 cores must be used in some settings. As a recall, in the paper 300 simulations are provided for each configuration. We sometimes tried to simulate slightly more than 300 to ensure that erratic simulations will not reduce substantially the final number of analysed simulations.
 
-In the parallelized simulation studies routines, the line `seeds <- 13^(1:n.cores) - 0:(n.cores-1)` establishes the initialized seeds used at the begginng of the `N.sim` simulations done in each core. They were chosen arbitrarily. Therefore, the final number of used cores determines the results.
+In the parallelized simulation studies routines, the line `seeds <- 13*( 2*(1:n.cores) - 1 ) - 2*(0:(n.cores-1))` establishes the initialized seeds used at the begginng of the `N.sim` simulations done in each core. They were chosen arbitrarily. Thus, the final number of used cores determines the results.
 
 
 **For the Capture model:**  
