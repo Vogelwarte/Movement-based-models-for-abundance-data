@@ -24,11 +24,11 @@ The routine will produce four `rds` files containing the information of the simu
 
 To analyze the results, the routine "AnalysisSimuStudes.R" is provided. One must initialize the desired model and the fitting method to analyze in the variables `model` and `fit_method` respectively, and also make precise the desired theoretical parameters values and number of individuals. The routine will read the `rds` available in the folder with the corresponding setting (if no such setting is available, it will crash). The code will filter the erratic simulation-fitting scenarios (cases leading to a numerically negative-definite Hessian matrices). Then, it will compute desired statistics such as average estimation and coverage probabilities.
 
-**IMPORTANT:** Since the simulation-fitting methods take some time, these routines are all parallelaized using the `parallel` library. The number of cores to be used are to be set in the variable `n.cores`. Inside each cluster definition, the variable `N.sim` is also defined, which indicates the number of simulations to execute *per core*. The routing merges the results in single arrays.
+**IMPORTANT:** Since the simulation-fitting methods take some time, these routines are all parallelaized using the `parallel` library. The number of cores to be used are to be set in the variable `n.cores`. Inside each cluster definition, the variable `N.sim` is also defined, which indicates the number of simulations to execute *per core*. The routine merges the results in single arrays.
 
 ### To obtain *exactly* the same results
 
-The results reported in Carrizo Vergara et al. (2024) were obtained over different machines and servers, therefore it is tricky to re-obtian the same results. Here we provide instructions to obtain them, but one must be aware than for some of those, multi-core serves with up-to 80 cores must be used in some settings. As a recall, in the paper 300 simulations are provided for each configuration. We sometimes tried to simulate slightly more than 300 to ensure that erratic simulations will not reduce substantially the final number of analysed simulations.
+The results reported in Carrizo Vergara et al. (2024) were obtained over different machines and servers, therefore it is tricky to re-obtian the same results. Here we provide instructions to obtain them, but one must be aware than for some of those, multi-core serves with up to 80 cores must be used in some settings. As a recall, in the paper 300 simulations are provided for each configuration. We sometimes tried to simulate slightly more than 300 to ensure that erratic simulations will not reduce substantially the final number of analysed simulations.
 
 In the parallelized simulation studies routines, the line `seeds <- 13*( 2*(1:n.cores) - 1 ) - 2*(0:(n.cores-1))` establishes the initialized seeds used at the begginng of the `N.sim` simulations done in each core. They were chosen arbitrarily. Thus, the final number of used cores determines the results.
 
@@ -43,13 +43,13 @@ For $\sigma = 10$ and $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.
 **For the Snapshot model:**
 
 For $\sigma = 2$, $N = 10^{2}$, set `n.cores = 78`, `N.sim = 4`.<br/>
-For $\sigma = 2$, $N = 10^{3}, 5644, 10^{4}$, set `n.cores = 75`, `N.sim = 4`.
-
-
+For $\sigma = 2$, $N = 10^{3}, 5644, 10^{4}$, set `n.cores = 75`, `N.sim = 4`.<br/>
+For $\sigma = 2$, $N = 10^{5}$, set `n.cores = 10`, `N.sim = 32`.<br/>
+For $\sigma = 5$, $N = 10^{2} , 10^{3} , 5644 , 10^{4} , 10^{5}$, set `n.cores = 10`, `N.sim = 32`. <br/>
 For $\sigma = 10$, $N = 10^{2}$, set `n.cores = 75`, `N.sim = 4`.<br/>
 For $\sigma = 10$, $N = 5644$, set `n.cores = 80`, `N.sim = 4`.<br/>
-For $\sigma = 10$, $N = 10^{3} , 10^{4}$, set `n.cores = 78`, `N.sim = 4`.
-
+For $\sigma = 10$, $N = 10^{3} , 10^{4}$, set `n.cores = 78`, `N.sim = 4`.<br/>
+For $\sigma = 10$, $N = 10^{5}$, set `n.cores = 10`, `N.sim = 32`.
 
 **For the EcoDiff model with MGLE:**
 
