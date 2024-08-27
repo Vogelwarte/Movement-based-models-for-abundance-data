@@ -51,11 +51,6 @@ For $\sigma = 10$, $N = 5644$, set `n.cores = 80`, `N.sim = 4`.<br/>
 For $\sigma = 10$, $N = 10^{3} , 10^{4}$, set `n.cores = 78`, `N.sim = 4`.<br/>
 For $\sigma = 10$, $N = 10^{5}$, set `n.cores = 10`, `N.sim = 32`.
 
-**For the EcoDiff model with MGLE:**
-
-
-**For the EcoDiff model with MLE:**
-
 
 
 
